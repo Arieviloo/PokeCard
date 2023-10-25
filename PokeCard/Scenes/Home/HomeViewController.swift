@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
 	
 	private var homeView: HomeView?
 	private var listCard: [Card] = []
+	private let cardVC = CardViewController()
 	
 	override func loadView() {
 		homeView = HomeView()
@@ -42,6 +43,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell()}
 		cell.nameLabel.text =  listCard[indexPath.row].name
+		
 		return cell
 	}
 	
@@ -51,6 +53,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+
+		cardVC.configView(with: listCard[indexPath.row])
+		navigationController?.pushViewController(cardVC, animated: true)
 	}
 }
 
