@@ -13,6 +13,10 @@
 		E2480C5B2AE94EB4007F7C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2480C592AE94EB4007F7C66 /* LaunchScreen.storyboard */; };
 		E2480C682AE95195007F7C66 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C672AE95195007F7C66 /* HomeView.swift */; };
 		E2480C6A2AE954D1007F7C66 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C692AE954D1007F7C66 /* HomeTableViewCell.swift */; };
+		E2480C6D2AE95AF8007F7C66 /* DataPokeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C6C2AE95AF8007F7C66 /* DataPokeCard.swift */; };
+		E2480C702AE960AF007F7C66 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C6F2AE960AF007F7C66 /* Cards.swift */; };
+		E2480C732AE98539007F7C66 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C722AE98539007F7C66 /* CardViewController.swift */; };
+		E2480C752AE98540007F7C66 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C742AE98540007F7C66 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		E2480C5C2AE94EB4007F7C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2480C672AE95195007F7C66 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E2480C692AE954D1007F7C66 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		E2480C6C2AE95AF8007F7C66 /* DataPokeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPokeCard.swift; sourceTree = "<group>"; };
+		E2480C6F2AE960AF007F7C66 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		E2480C722AE98539007F7C66 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		E2480C742AE98540007F7C66 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +64,12 @@
 		E2480C4D2AE94EB3007F7C66 /* PokeCard */ = {
 			isa = PBXGroup;
 			children = (
+				E2480C6E2AE960A0007F7C66 /* Model */,
 				E2480C622AE950A2007F7C66 /* Application */,
 				E2480C632AE950BB007F7C66 /* Extension */,
 				E2480C642AE950C6007F7C66 /* Resource */,
 				E2480C652AE950CD007F7C66 /* Scenes */,
+				E2480C6B2AE95ABF007F7C66 /* Service */,
 				E2480C5C2AE94EB4007F7C66 /* Info.plist */,
 			);
 			path = PokeCard;
@@ -92,6 +102,7 @@
 		E2480C652AE950CD007F7C66 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E2480C712AE98525007F7C66 /* Card */,
 				E2480C662AE9516B007F7C66 /* Home */,
 			);
 			path = Scenes;
@@ -105,6 +116,31 @@
 				E2480C692AE954D1007F7C66 /* HomeTableViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E2480C6B2AE95ABF007F7C66 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E2480C6C2AE95AF8007F7C66 /* DataPokeCard.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E2480C6E2AE960A0007F7C66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2480C6F2AE960AF007F7C66 /* Cards.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2480C712AE98525007F7C66 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				E2480C722AE98539007F7C66 /* CardViewController.swift */,
+				E2480C742AE98540007F7C66 /* CardView.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +214,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2480C682AE95195007F7C66 /* HomeView.swift in Sources */,
+				E2480C732AE98539007F7C66 /* CardViewController.swift in Sources */,
 				E2480C532AE94EB3007F7C66 /* HomeViewController.swift in Sources */,
+				E2480C702AE960AF007F7C66 /* Cards.swift in Sources */,
 				E2480C6A2AE954D1007F7C66 /* HomeTableViewCell.swift in Sources */,
 				E2480C4F2AE94EB3007F7C66 /* AppDelegate.swift in Sources */,
+				E2480C752AE98540007F7C66 /* CardView.swift in Sources */,
+				E2480C6D2AE95AF8007F7C66 /* DataPokeCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

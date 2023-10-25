@@ -10,8 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 	
 	private var homeView: HomeView?
-	
-	let listName = [ "joao1", "joa2", "joao3","joao4","joao5","joao6","joao7","joao8" ]
+	private var listCard: [Card] = []
 	
 	override func loadView() {
 		homeView = HomeView()
@@ -23,17 +22,26 @@ class HomeViewController: UIViewController {
 		view.backgroundColor = .red
 		
 		homeView?.protocolsTableView(delegate: self, dataSource: self)
+		DataPokeCard.shared.getCard{ result in
+			switch result {
+			case .success( let sucess):
+				self.listCard = sucess.cards ?? []
+				self.homeView?.listTableView.reloadData()
+			case .failure(let error):
+				print(#function, " -> \(error)")
+			}
+		}
 	}
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		listName.count
+		listCard.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell()}
-		cell.nameLabel.text = listName[indexPath.row].description
+		cell.nameLabel.text =  listCard[indexPath.row].name
 		return cell
 	}
 	
@@ -44,7 +52,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
-	
-	
 }
 
