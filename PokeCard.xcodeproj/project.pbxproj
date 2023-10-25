@@ -52,13 +52,45 @@
 		E2480C4D2AE94EB3007F7C66 /* PokeCard */ = {
 			isa = PBXGroup;
 			children = (
-				E2480C4E2AE94EB3007F7C66 /* AppDelegate.swift */,
-				E2480C522AE94EB3007F7C66 /* ViewController.swift */,
-				E2480C572AE94EB4007F7C66 /* Assets.xcassets */,
-				E2480C592AE94EB4007F7C66 /* LaunchScreen.storyboard */,
+				E2480C622AE950A2007F7C66 /* Application */,
+				E2480C632AE950BB007F7C66 /* Extension */,
+				E2480C642AE950C6007F7C66 /* Resource */,
+				E2480C652AE950CD007F7C66 /* Scenes */,
 				E2480C5C2AE94EB4007F7C66 /* Info.plist */,
 			);
 			path = PokeCard;
+			sourceTree = "<group>";
+		};
+		E2480C622AE950A2007F7C66 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E2480C4E2AE94EB3007F7C66 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E2480C632AE950BB007F7C66 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E2480C642AE950C6007F7C66 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E2480C572AE94EB4007F7C66 /* Assets.xcassets */,
+				E2480C592AE94EB4007F7C66 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E2480C652AE950CD007F7C66 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E2480C522AE94EB3007F7C66 /* ViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
