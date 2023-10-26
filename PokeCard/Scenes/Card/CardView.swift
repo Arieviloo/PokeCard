@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol CardViewProtocol:NSObject {
+	func tappedMoreInfo()
+}
+
 class CardView: UIView {
+	
+	private weak var delegate: CardViewProtocol?
+
+	public func delegate(delegate: CardViewProtocol) {
+		self.delegate = delegate
+	}
 	
 	lazy var titleLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
@@ -28,8 +38,9 @@ class CardView: UIView {
 		$0.layer.cornerRadius = 12
 		$0.layer.borderColor = UIColor(red: 207/255, green: 0/255, blue: 192/255, alpha: 1.0).cgColor
 		$0.layer.borderWidth = 2
+		$0.addTarget(self, action: #selector(tappedMoreInfo), for: .touchUpInside)
 		return $0
-	}(UIButton())
+	}(UIButton(type: .system))
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -48,11 +59,15 @@ class CardView: UIView {
 		addSubview(moreInfoButton)
 	}
 	
+	@objc func tappedMoreInfo() {
+		self.delegate?.tappedMoreInfo()
+	}
+	
 	public func configView(with viewModel: Card) {
 		print(viewModel)
 		titleLabel.text = viewModel.name
 		
-		guard let imageURL = viewModel.imageURL else { return }
+		guard let imageURL = viewModel.imageURLHiRes else { return }
 		guard let URL = URL(string: imageURL) else { return }
 		URLSession.shared.dataTask(with: URL) {[weak self] (data,_,_) in
 			if let data {
@@ -61,7 +76,6 @@ class CardView: UIView {
 				}
 			}
 		}.resume()
-		
 	}
 	
 	private func configConstraints() {
