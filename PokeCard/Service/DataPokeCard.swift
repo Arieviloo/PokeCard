@@ -12,29 +12,21 @@ class DataPokeCard: NSObject {
 	
 	func getCard(completion: @escaping(Result<Cards, Error>) -> Void) {
 		guard let urlString = ProcessInfo.processInfo.environment["API_URL"] else { return }
-		
 		guard let url: URL = URL(string: urlString) else { return }
 		
-		let dataPoke = URLSession.shared.dataTask(with: url) { (data, response, error) in
+		URLSession.shared.dataTask(with: url) { (data, response, error) in
 			DispatchQueue.main.async {
-				if let error {
-					print("erro1 -> ", error)
-				}
-				
+				if let error { completion(.failure(error)) }
 				guard let data else { return }
-				
 				guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
-
+				
 				do {
 					let cards: Cards = try JSONDecoder().decode(Cards.self, from: data)
 					completion(.success(cards))
 				} catch {
-					print("err2 -> ", error)
+					completion(.failure(error))
 				}
 			}
-			
-		}
-		dataPoke.resume()
-		
+		}.resume()
 	}
 }
