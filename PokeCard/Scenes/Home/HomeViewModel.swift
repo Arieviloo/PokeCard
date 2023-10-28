@@ -28,11 +28,12 @@ class HomeViewModel {
 	
 	public func fetchRequestCard() {
 		service.getCard{ [weak self] result in
+			guard let self else { return }
 			DispatchQueue.main.async{
 				switch result {
 				case .success( let sucess):
-					self?.listCard = sucess.cards ?? []
-					self?.delegate?.sucecc()
+					self.listCard = sucess.cards ?? []
+					self.delegate?.sucecc()
 				case .failure(let error):
 					print(#function, " -> \(error)")
 				}
