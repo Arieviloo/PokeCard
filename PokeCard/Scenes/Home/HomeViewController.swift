@@ -10,52 +10,49 @@ import UIKit
 class HomeViewController: UIViewController {
 	
 	private var homeView: HomeView?
-	private var listCard: [Card] = []
 	private let cardVC = CardViewController()
+	private let homeVM: HomeViewModel = HomeViewModel()
 	
 	override func loadView() {
 		homeView = HomeView()
 		view = homeView
 	}
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .red
-		
+		homeVM.delegate(delegate: self)
 		homeView?.protocolsTableView(delegate: self, dataSource: self)
-		DataPokeCard.shared.getCard{ result in
-			switch result {
-			case .success( let sucess):
-				self.listCard = sucess.cards ?? []
-				self.homeView?.listTableView.reloadData()
-			case .failure(let error):
-				print(#function, " -> \(error)")
-			}
-		}
 	}
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		listCard.count
+		homeVM.numberOfRowsInSection()
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell()}
-		cell.nameLabel.text =  listCard[indexPath.row].name
+		cell.nameLabel.text =  homeVM.listCard[indexPath.row].name
 		
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		80
+		homeVM.heigthOfRow()
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 
-		cardVC.configView(with: listCard[indexPath.row])
+		cardVC.configView(with: homeVM.listCard[indexPath.row])
 		navigationController?.pushViewController(cardVC, animated: true)
+	}
+}
+
+extension HomeViewController: HomeViewModelProtocol {
+	func sucecc() {
+		homeView?.listTableView.reloadData()
 	}
 }
 
