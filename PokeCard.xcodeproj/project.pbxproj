@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2377AEB2AEAE77200044E82 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2377AEA2AEAE77200044E82 /* HomeViewModel.swift */; };
 		E2480C4F2AE94EB3007F7C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C4E2AE94EB3007F7C66 /* AppDelegate.swift */; };
 		E2480C532AE94EB3007F7C66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C522AE94EB3007F7C66 /* HomeViewController.swift */; };
 		E2480C582AE94EB4007F7C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2480C572AE94EB4007F7C66 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2377AEA2AEAE77200044E82 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E2480C4B2AE94EB3007F7C66 /* PokeCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2480C4E2AE94EB3007F7C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2480C522AE94EB3007F7C66 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E2480C522AE94EB3007F7C66 /* HomeViewController.swift */,
+				E2377AEA2AEAE77200044E82 /* HomeViewModel.swift */,
 				E2480C672AE95195007F7C66 /* HomeView.swift */,
 				E2480C692AE954D1007F7C66 /* HomeTableViewCell.swift */,
 			);
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2480C682AE95195007F7C66 /* HomeView.swift in Sources */,
+				E2377AEB2AEAE77200044E82 /* HomeViewModel.swift in Sources */,
 				E2480C732AE98539007F7C66 /* CardViewController.swift in Sources */,
 				E2480C532AE94EB3007F7C66 /* HomeViewController.swift in Sources */,
 				E2480C702AE960AF007F7C66 /* Cards.swift in Sources */,
