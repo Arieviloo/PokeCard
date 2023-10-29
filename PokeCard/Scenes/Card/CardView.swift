@@ -64,7 +64,6 @@ class CardView: UIView {
 	}
 	
 	public func configView(with viewModel: Card) {
-		print(viewModel)
 		titleLabel.text = viewModel.name
 		
 		guard let imageURL = viewModel.imageURLHiRes else { return }

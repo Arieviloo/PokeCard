@@ -13,7 +13,7 @@ class HomeTableViewCell: UITableViewCell {
 	
 	lazy var nameLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		
+		$0.font = UIFont.systemFont(ofSize: 20)
 		return $0
 	}(UILabel())
 	

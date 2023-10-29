@@ -11,7 +11,6 @@ class HomeView: UIView {
 	
 	lazy var listTableView: UITableView = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.backgroundColor = .green
 		$0.separatorInset = .zero
 		$0.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
 		return $0

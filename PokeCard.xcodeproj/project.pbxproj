@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E21EEDD02AEDD3820022ADD0 /* Localizable.strings in Sources */ = {isa = PBXBuildFile; fileRef = E21EEDCF2AEDD3820022ADD0 /* Localizable.strings */; };
 		E2377AEB2AEAE77200044E82 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2377AEA2AEAE77200044E82 /* HomeViewModel.swift */; };
 		E2480C4F2AE94EB3007F7C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C4E2AE94EB3007F7C66 /* AppDelegate.swift */; };
 		E2480C532AE94EB3007F7C66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C522AE94EB3007F7C66 /* HomeViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E21EEDCF2AEDD3820022ADD0 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E2377AEA2AEAE77200044E82 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E2480C4B2AE94EB3007F7C66 /* PokeCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2480C4E2AE94EB3007F7C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E21EEDCE2AEDD3610022ADD0 /* LocalizableStrings */ = {
+			isa = PBXGroup;
+			children = (
+				E21EEDCF2AEDD3820022ADD0 /* Localizable.strings */,
+			);
+			path = LocalizableStrings;
+			sourceTree = "<group>";
+		};
 		E2480C422AE94EB3007F7C66 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 		E2480C642AE950C6007F7C66 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E21EEDCE2AEDD3610022ADD0 /* LocalizableStrings */,
 				E2480C572AE94EB4007F7C66 /* Assets.xcassets */,
 				E2480C592AE94EB4007F7C66 /* LaunchScreen.storyboard */,
 			);
@@ -218,6 +229,7 @@
 			files = (
 				E2480C682AE95195007F7C66 /* HomeView.swift in Sources */,
 				E2377AEB2AEAE77200044E82 /* HomeViewModel.swift in Sources */,
+				E21EEDD02AEDD3820022ADD0 /* Localizable.strings in Sources */,
 				E2480C732AE98539007F7C66 /* CardViewController.swift in Sources */,
 				E2480C532AE94EB3007F7C66 /* HomeViewController.swift in Sources */,
 				E2480C702AE960AF007F7C66 /* Cards.swift in Sources */,

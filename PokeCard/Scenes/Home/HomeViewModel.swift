@@ -48,4 +48,10 @@ class HomeViewModel {
 	public func heigthOfRow() -> CGFloat {
 		return 80
 	}
+	
+	public func configView(with controller: UIViewController) {
+		controller.title = String(localized: "titleHome")
+		controller.navigationController?.navigationBar.prefersLargeTitles = true
+		controller.view.backgroundColor = .white
+	}
 }
