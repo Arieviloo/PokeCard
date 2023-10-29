@@ -22,7 +22,7 @@ class CardView: UIView {
 	lazy var titleLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
 		$0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-		$0.textColor = UIColor(red: 25/255, green: 115/255, blue: 232/255, alpha: 0.91)
+		$0.textColor = UIColor.appButtonPrimary
 		return $0
 	}(UILabel())
 	
@@ -42,8 +42,8 @@ class CardView: UIView {
 		$0.setTitleColor(.white, for: .normal)
 		$0.clipsToBounds = true
 		$0.layer.cornerRadius = 12
-		$0.layer.borderColor = UIColor(red: 81/255, green: 84/255, blue: 157/255, alpha: 0.62).cgColor
-		$0.layer.backgroundColor = UIColor(red: 25/255, green: 115/255, blue: 232/255, alpha: 0.91).cgColor
+		$0.layer.borderColor = UIColor.appBorderButtonPrimary.cgColor
+		$0.layer.backgroundColor = UIColor.appButtonPrimary.cgColor
 		$0.layer.borderWidth = 2
 		$0.addTarget(self, action: #selector(tappedMoreInfo), for: .touchUpInside)
 		return $0
@@ -51,7 +51,7 @@ class CardView: UIView {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		backgroundColor = UIColor(red: 255/255, green: 203/255, blue: 2/255, alpha: 1)
+		backgroundColor = UIColor.appBackgroundPrimary
 		configSubView()
 		configConstraints()
 	}

@@ -53,5 +53,6 @@ class HomeViewModel {
 		controller.title = String(localized: "titleHome")
 		controller.navigationController?.navigationBar.prefersLargeTitles = true
 		controller.view.backgroundColor = .white
+		controller.view.backgroundColor = UIColor.appBackgroundPrimary
 	}
 }
