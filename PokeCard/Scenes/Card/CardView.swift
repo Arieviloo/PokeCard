@@ -21,22 +21,29 @@ class CardView: UIView {
 	
 	lazy var titleLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+		$0.textColor = UIColor(red: 25/255, green: 115/255, blue: 232/255, alpha: 0.91)
 		return $0
 	}(UILabel())
 	
 	lazy var cardImageView: UIImageView = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.backgroundColor = .yellow
+		$0.layer.shadowColor = UIColor.black.cgColor
+		$0.layer.shadowOpacity = 1
+		$0.layer.shadowOffset = .zero
+		$0.layer.shadowRadius = 10
 		return $0
 	}(UIImageView())
 	
 	lazy var moreInfoButton: UIButton = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
 		$0.setTitle("More Info", for: .normal)
-		$0.setTitleColor(.black, for: .normal)
+		$0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+		$0.setTitleColor(.white, for: .normal)
 		$0.clipsToBounds = true
 		$0.layer.cornerRadius = 12
-		$0.layer.borderColor = UIColor(red: 207/255, green: 0/255, blue: 192/255, alpha: 1.0).cgColor
+		$0.layer.borderColor = UIColor(red: 81/255, green: 84/255, blue: 157/255, alpha: 0.62).cgColor
+		$0.layer.backgroundColor = UIColor(red: 25/255, green: 115/255, blue: 232/255, alpha: 0.91).cgColor
 		$0.layer.borderWidth = 2
 		$0.addTarget(self, action: #selector(tappedMoreInfo), for: .touchUpInside)
 		return $0
@@ -44,7 +51,7 @@ class CardView: UIView {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		backgroundColor = .white
+		backgroundColor = UIColor(red: 255/255, green: 203/255, blue: 2/255, alpha: 1)
 		configSubView()
 		configConstraints()
 	}
@@ -79,11 +86,11 @@ class CardView: UIView {
 	
 	private func configConstraints() {
 		NSLayoutConstraint.activate([
-			titleLabel.bottomAnchor.constraint(equalTo: cardImageView.topAnchor, constant: -12),
+			titleLabel.bottomAnchor.constraint(equalTo: cardImageView.topAnchor, constant: -20),
 			titleLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
 			
-			cardImageView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-			cardImageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
+			cardImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+			cardImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
 			cardImageView.widthAnchor.constraint(equalToConstant: 300),
 			cardImageView.heightAnchor.constraint(equalToConstant: 400),
 			
