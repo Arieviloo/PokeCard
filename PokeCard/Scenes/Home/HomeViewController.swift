@@ -34,6 +34,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell()}
 		cell.nameLabel.text =  homeVM.listCard[indexPath.row].name
+		cell.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.80)
 		return cell
 	}
 	
