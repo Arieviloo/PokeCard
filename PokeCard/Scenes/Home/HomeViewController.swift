@@ -20,9 +20,9 @@ class HomeViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .red
 		homeVM.delegate(delegate: self)
 		homeView?.protocolsTableView(delegate: self, dataSource: self)
+		homeVM.configView(with: self)
 	}
 }
 
@@ -34,7 +34,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell()}
 		cell.nameLabel.text =  homeVM.listCard[indexPath.row].name
-		
 		return cell
 	}
 	
