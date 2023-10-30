@@ -30,7 +30,6 @@ class CardViewController: UIViewController {
 		numberPokedex = viewModel.nationalPokedexNumber ?? 0
 		textCard = viewModel.text?[0] ?? ""
 		typeCard = viewModel.supertype ?? ""
-		print(typeCard)
 	}
 }
 

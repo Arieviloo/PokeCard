@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
 	
 	private var homeView: HomeView?
-	private let cardVC = CardViewController()
 	private let homeVM: HomeViewModel = HomeViewModel()
 	
 	override func loadView() {
@@ -36,7 +35,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.nameLabel.text =  homeVM.listCard[indexPath.row].name
 		cell.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.80)
 		return cell
-	}
+	}	
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		homeVM.heigthOfRow()
@@ -44,7 +43,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-
+		let cardVC = CardViewController()
 		cardVC.configView(with: homeVM.listCard[indexPath.row])
 		navigationController?.pushViewController(cardVC, animated: true)
 	}
