@@ -14,7 +14,7 @@ protocol CardViewProtocol:NSObject {
 class CardView: UIView {
 	
 	private weak var delegate: CardViewProtocol?
-
+	
 	public func delegate(delegate: CardViewProtocol) {
 		self.delegate = delegate
 	}
@@ -38,13 +38,17 @@ class CardView: UIView {
 	lazy var moreInfoButton: UIButton = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
 		$0.setTitle("More Info", for: .normal)
-		$0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-		$0.setTitleColor(.white, for: .normal)
-		$0.clipsToBounds = true
-		$0.layer.cornerRadius = 12
-		$0.layer.borderColor = UIColor.appBorderButtonPrimary.cgColor
-		$0.layer.backgroundColor = UIColor.appButtonPrimary.cgColor
+		$0.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+		$0.setTitleColor(.black, for: .normal)
+//		$0.clipsToBounds = true
+		$0.layer.cornerRadius = 8
+		$0.layer.borderColor = UIColor.black.cgColor
+		$0.layer.backgroundColor = UIColor.white.cgColor
 		$0.layer.borderWidth = 2
+		
+		$0.layer.shadowOffset = CGSize(width: 3, height: 4)
+		$0.layer.shadowRadius = 0
+		$0.layer.shadowOpacity = 1
 		$0.addTarget(self, action: #selector(tappedMoreInfo), for: .touchUpInside)
 		return $0
 	}(UIButton(type: .system))
