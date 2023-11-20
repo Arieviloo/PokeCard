@@ -20,6 +20,7 @@
 		E2480C732AE98539007F7C66 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C722AE98539007F7C66 /* CardViewController.swift */; };
 		E2480C752AE98540007F7C66 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2480C742AE98540007F7C66 /* CardView.swift */; };
 		E283A82C2AEE199B00EDA448 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283A82B2AEE199B00EDA448 /* UIColor+Extension.swift */; };
+		E2FE36CB2B0BF278004C744A /* Bungee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2FE36CA2B0BF278004C744A /* Bungee-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E2480C722AE98539007F7C66 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		E2480C742AE98540007F7C66 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E283A82B2AEE199B00EDA448 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E2FE36CA2B0BF278004C744A /* Bungee-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bungee-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		E2480C642AE950C6007F7C66 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E2FE36C82B0BEE63004C744A /* Font */,
 				E21EEDCE2AEDD3610022ADD0 /* LocalizableStrings */,
 				E2480C572AE94EB4007F7C66 /* Assets.xcassets */,
 				E2480C592AE94EB4007F7C66 /* LaunchScreen.storyboard */,
@@ -158,6 +161,14 @@
 				E2480C742AE98540007F7C66 /* CardView.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		E2FE36C82B0BEE63004C744A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				E2FE36CA2B0BF278004C744A /* Bungee-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FE36CB2B0BF278004C744A /* Bungee-Regular.ttf in Resources */,
 				E2480C5B2AE94EB4007F7C66 /* LaunchScreen.storyboard in Resources */,
 				E2480C582AE94EB4007F7C66 /* Assets.xcassets in Resources */,
 			);

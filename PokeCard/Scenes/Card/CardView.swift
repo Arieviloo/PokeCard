@@ -21,17 +21,22 @@ class CardView: UIView {
 	
 	lazy var titleLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+		$0.font = UIFont(name: "Bungee-Regular", size: 36)
+		$0.numberOfLines = 0
+		$0.textAlignment = .center
 		$0.textColor = UIColor.appButtonPrimary
 		return $0
 	}(UILabel())
 	
 	lazy var cardImageView: UIImageView = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.layer.shadowColor = UIColor.black.cgColor
+		$0.layer.borderColor = UIColor.black.cgColor
+		$0.layer.backgroundColor = UIColor.yellow.cgColor
+		$0.layer.borderWidth = 2
+		
+		$0.layer.shadowOffset = CGSize(width: 3, height: 4)
+		$0.layer.shadowRadius = 0
 		$0.layer.shadowOpacity = 1
-		$0.layer.shadowOffset = .zero
-		$0.layer.shadowRadius = 10
 		return $0
 	}(UIImageView())
 	
@@ -40,7 +45,6 @@ class CardView: UIView {
 		$0.setTitle("More Info", for: .normal)
 		$0.titleLabel?.font = UIFont.systemFont(ofSize: 20)
 		$0.setTitleColor(.black, for: .normal)
-//		$0.clipsToBounds = true
 		$0.layer.cornerRadius = 8
 		$0.layer.borderColor = UIColor.black.cgColor
 		$0.layer.backgroundColor = UIColor.white.cgColor
@@ -91,6 +95,8 @@ class CardView: UIView {
 	private func configConstraints() {
 		NSLayoutConstraint.activate([
 			titleLabel.bottomAnchor.constraint(equalTo: cardImageView.topAnchor, constant: -20),
+			titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 12),
+			titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -12),
 			titleLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
 			
 			cardImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
